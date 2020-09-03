@@ -7,7 +7,7 @@ echo "PID TTY ST TIME NAME" | awk '{printf "%-6s %-6s %-2s %-5s %s\n", $1, $2, $
 for path in /proc/[0-9]*
 do
 
-# Cохраняем данные с файла stat в переменную $stat
+# Cохраняем данные с файла stat в переменную $stat и с файла cmdline в переменную $cmd
 stat=$(cat $path/stat | tr -d "(" | tr -d ")")
 cmd=$(cat $path/cmdline)
 
